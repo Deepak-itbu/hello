@@ -1,20 +1,12 @@
-# Use official Python image
-FROM python:3.11-slim
 
-# Prevent Python from writing .pyc files
-ENV PYTHONDONTWRITEBYTECODE=1
+FROM python:3.11
 
-# Ensure logs appear immediately in container logs
-ENV PYTHONUNBUFFERED=1
-
-# Set working directory
 WORKDIR /app
 
 
-
-# Copy application code
 COPY . .
 
+EXPOSE 5000
 
-# Default command (change based on your app)
 CMD ["python", "hello.py"]
+
